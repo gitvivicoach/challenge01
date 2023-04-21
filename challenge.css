@@ -1,0 +1,45 @@
+head {
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+.styledButton {
+  margin-right: 25px;
+}
+
+#inputText {
+  margin: 0 auto;
+  display: block;
+}
+#outputText {
+  margin: 0 auto;
+  display: block;
+}
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  label[for="encrypt"], label[for="decrypt"] {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  div.radio-group {
+    text-align: center;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  

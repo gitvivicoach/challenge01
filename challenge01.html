@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="challenge.css">
+  </head>
+  <header style="display: flex; justify-content: center;">
+    <img src="Vector.png" alt="Logo de mi aplicación">
+
+  </header>
+  
+  <style>
+    .styledButton {
+      border: 2px solid black;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+    }
+  </style>
+  
+  <body>
+    <style>
+      body {
+        background-color: #f1f1f1;
+      }
+    </style>
+<style>
+  input[type="text"] {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+  }
+</style>
+    
+    <h1>Encriptador de texto</h1>
+    <textarea id="inputText" rows="10" cols="60"></textarea>
+    <br>
+    <div class="radio-group">
+    <input type="radio" id="encrypt" name="action" value="encrypt">
+    <label for="encrypt">Encriptar</label><br>
+    <input type="radio" id="decrypt" name="action" value="decrypt">
+    <label for="decrypt">Desencriptar</label><br><br>
+    </div>
+    <div class="buttonContainer">
+    <button class="styledButton" onclick="performAction()">Procesar</button>
+    <button class="styledButton" onclick="copyToClipboard()">Copiar</button>
+    </div>
+    <br><br>
+    <textarea id="outputText" rows="10" cols="60"></textarea>
+
+    <script>
+      function performAction() {
+        const inputText = document.getElementById("inputText").value.toLowerCase();
+        let outputText = "";
+
+        if (document.getElementById("encrypt").checked) {
+          outputText = encryptText(inputText);
+        } else {
+          outputText = decryptText(inputText);
+        }
+
+        document.getElementById("outputText").value = outputText;
+      }
+
+      function encryptText(text) {
+        text = text.replaceAll("e", "enter");
+        text = text.replaceAll("i", "imes");
+        text = text.replaceAll("a", "ai");
+        text = text.replaceAll("o", "ober");
+        text = text.replaceAll("u", "ufat");
+        return text;
+      }
+
+      function decryptText(text) {
+        text = text.replaceAll("enter", "e");
+        text = text.replaceAll("imes", "i");
+        text = text.replaceAll("ai", "a");
+        text = text.replaceAll("ober", "o");
+        text = text.replaceAll("ufat", "u");
+        return text;
+      }
+
+      function copyToClipboard() {
+        const outputText = document.getElementById("outputText");
+        outputText.select();
+        outputText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+      }
+
+    
+
+    </script>
+    
+  </body>
+
+  <footer>
+    &copy; 2023 challenge #1 Evidelia Perez 
+  </footer>
+  
+</html>
